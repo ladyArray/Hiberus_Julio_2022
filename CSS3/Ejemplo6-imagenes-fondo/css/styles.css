@@ -1,0 +1,26 @@
+div{
+    width: 50%;
+    min-height: 400px;
+    background-color: bisque;
+    margin: 50px;
+}
+
+#cuadro1{
+    background-image: url(../images/logo.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#cuadro2{
+    /*
+    background-image: url(../images/perro.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    */
+
+    /* https://css-tricks.com/almanac/properties/b/background/ */
+    background: url(../images/logo.jpeg) top right/200px 200px  no-repeat bisque ;
+  
+}

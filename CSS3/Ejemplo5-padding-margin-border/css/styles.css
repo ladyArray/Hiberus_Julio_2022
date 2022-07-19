@@ -1,0 +1,57 @@
+body{
+    border: thin solid red;
+}
+
+div{
+    margin-bottom: 15px;
+}
+
+span div:last-child{
+    margin-bottom: 0px;
+}
+
+#sec1{
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+    width: 50%;
+    padding: 20px;  /* mismo padding por los 4 costados */
+}
+
+#sec2{
+    border: thick double blue;
+    width: fit-content;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    /* En el sentido de las agujas del reloj: top right bottom left*/
+    /* padding: 5px 30px 20px 10px;*/
+}
+
+#sec3{
+    width: fit-content;
+    border-top: thin dotted orange;
+    border-right: thick solid cyan;
+    border-bottom: 5px dashed deeppink;
+    border-left: medium double green;
+    margin-left: 20px;
+}
+
+#sec5{
+    width: fit-content;
+    border: thin solid blue;
+    padding: 5px 20px; /* 5px top-bottom y 20px left-right*/
+    margin: 20px 50px; /* 20px top-bottom y 50px left-right */
+}
+
+#prueba{
+    /* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
+    width: 50px;
+    height: 50px;
+    border: thin solid lightseagreen;
+    padding: 10px;
+    /*box-sizing: content-box;  valor por defecto, ahora el tamaño 51.99x51.99*/
+    box-sizing: border-box; /* El tamaño no crece, se mantiene 50x50 */
+}

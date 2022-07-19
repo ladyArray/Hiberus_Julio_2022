@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .frame{
+                border: thin solid black;
+                margin: 15px;
+            }
+            .borde{
+                border: 2px dashed red;
+            }
+            .fondo{
+                background-color: silver;
+            }
+            .padding{
+                padding: 5px 20px 15px 30px;
+            }
+            .margen{
+                margin: 30px 15px 5px 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- (div>div>div)*5 -->
+        <!-- div*5>div>div  -->
+        <div class="frame">
+            <div class="borde">
+                <div class="fondo">Border</div>
+            </div>
+        </div>
+        <div class="frame">
+            <div class="borde padding">
+                <div class="fondo">Border y padding</div>
+            </div>
+        </div>
+        <div class="frame">
+            <div class="borde padding margen">
+                <div class="fondo">Border, padding y margin</div>
+            </div>
+        </div>
+        <div class="frame padding">
+           
+                <div class="fondo  margen">Padding y margin</div>
+            
+        </div>
+        <div class="frame">
+         
+                <div class="fondo margen">Margin</div>
+          
+        </div>
+    </body>
+</html>
