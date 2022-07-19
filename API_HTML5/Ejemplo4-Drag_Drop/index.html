@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejemplo Drag&Drop</title>
+        <style>
+            #contenedor{
+                width: 300px;
+                height: 200px;
+                float: right;
+                background-color: blanchedalmond;
+            }
+
+            #inicio{
+                width: 200px;
+                height: 50px;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="inicio" ondrop="iniciar()" ondragover="event.preventDefault()" >
+            <div id="arrastra" draggable="true" ondragstart="start(event)" ondragend="end()">
+                Elemento arrastrable
+            </div>
+        </div>
+        <div id="contenedor" ondragover="over()" ondragleave="leave()" ondrop="drop()"></div>
+
+        <script>
+            function iniciar(){
+                //event.target.appendChild(document.getElementById("arrastra"));  // probar
+                // no necesito document.getElementById
+                event.target.appendChild(arrastra); 
+                event.target.style.border = 'none';
+            }
+
+            function drop(){
+                //event.target.appendChild(document.getElementById("arrastra"));  // probar
+                // no necesito document.getElementById
+                event.target.appendChild(arrastra); 
+                event.target.style.border = 'none';
+            }
+
+            function over(){
+                event.target.style.border = '3px solid blue';
+                // Cancelo el evento para que detecte el evento drop
+                event.preventDefault();
+            }
+
+            function leave(){
+                event.target.style.border = 'none';
+            }
+
+            function start(event){
+                event.target.style.opacity = '0.3';
+            }
+
+            function end(){
+                event.target.style.opacity = '1';
+            }
+        </script>
+    </body>
+</html>
+

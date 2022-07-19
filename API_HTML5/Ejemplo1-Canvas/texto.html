@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <canvas id="lienzo" width="1200px" height="600px">
+            Su navegador no soporta HTML 5
+        </canvas>
+
+        <script>
+            // Obtener la referencia al objeto canvas
+            var canvas = document.getElementById("lienzo");
+
+            // Acceder al contexto del canvas
+            var ctxCanvas = canvas.getContext('2d');
+
+            // Texto relleno
+            ctxCanvas.fillStyle = "green";
+            ctxCanvas.font = "bold 50px Arial";
+            ctxCanvas.fillText("Saludos!!!", 100,100);
+
+            // Texto perfilado
+            ctxCanvas.strokeStyle = "blue"
+            ctxCanvas.strokeText("Hasta el lunes!!!", 100,300)
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <canvas id="lienzo" width="1200px" height="600px">
+            Su navegador no soporta HTML 5
+        </canvas>
+
+        <script>
+            // Obtener la referencia al objeto canvas
+            var canvas = document.getElementById("lienzo");
+
+            // Acceder al contexto del canvas
+            var ctxCanvas = canvas.getContext('2d');
+
+            // Pintar un rectangulo rojo
+            ctxCanvas.fillStyle = "rgb(255,0,0)";
+            ctxCanvas.fillRect(300,300, 200,200);
+
+            // Pintar un rectangulo con perimetro blue
+            ctxCanvas.strokeStyle = "blue";
+            ctxCanvas.strokeRect(250,10,   200,200); // coordenada x, y, ancho, alto
+
+            // Pintar el rectangulo amarillo con borde verde
+            ctxCanvas.fillStyle = "yellow";
+            ctxCanvas.strokeStyle = "green";     
+            ctxCanvas.fillRect(500,10, 200,200);
+            ctxCanvas.strokeRect(500,10,   200,200);
+
+            // Circulo rosa
+            ctxCanvas.fillStyle = "pink";
+            ctxCanvas.beginPath();
+            ctxCanvas.arc(100, 320, 100, 0,2 * Math.PI);
+            ctxCanvas.fill();
+
+            //Pokeball
+            ctxCanvas.fillStyle = 'red';
+            ctxCanvas.beginPath()
+            ctxCanvas.arc(110, 100, 50, 0, 2 * Math.PI)
+            ctxCanvas.fill()
+
+            ctxCanvas.fillStyle = 'white';
+            ctxCanvas.beginPath()
+            ctxCanvas.arc(110, 100, 50, 0, 1 * Math.PI)
+            ctxCanvas.fill()
+
+            ctxCanvas.fillStyle = "black";
+            ctxCanvas.fillRect(60, 98, 100, 5);
+
+            ctxCanvas.fillStyle = 'black';
+            ctxCanvas.beginPath()
+            ctxCanvas.arc(110, 100, 10, 0, 2 * Math.PI)
+            ctxCanvas.fill()
+
+            ctxCanvas.fillStyle = 'white';
+            ctxCanvas.beginPath()
+            ctxCanvas.arc(110, 100, 9, 0, 2 * Math.PI)
+            ctxCanvas.fill()
+
+
+            // Dibujar con péntagono
+            ctxCanvas.fillStyle = "orange"
+            ctxCanvas.beginPath()
+            ctxCanvas.moveTo(650,350)
+            ctxCanvas.lineTo(700,390)
+            ctxCanvas.lineTo(680,450)
+            ctxCanvas.lineTo(620,450)
+            ctxCanvas.lineTo(600,390)
+            ctxCanvas.closePath()
+            ctxCanvas.fill();
+
+            // Dibujar un paralelogramo
+            ctxCanvas.fillStyle = "fuchsia"
+            ctxCanvas.beginPath()
+            ctxCanvas.moveTo(750,350)
+            ctxCanvas.lineTo(850,350)
+            ctxCanvas.lineTo(800,400)
+            ctxCanvas.lineTo(700,400)  
+            ctxCanvas.closePath()
+            ctxCanvas.fill();
+
+
+            
+        </script>
+    </body>
+</html>

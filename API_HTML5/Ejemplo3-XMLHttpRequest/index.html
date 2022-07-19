@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                Ejemplo para descargar el logo de Hiberus
+                de una web y mostrarlo en nuestra pagina
+            */
+
+            // Obtener una instancia del objeto XMLHttpRequest
+            var xhr = new XMLHttpRequest();
+
+            // Preparar la peticion
+            var url = "https://www.extradigital.es/wp-content/uploads/2019/06/Hiberus.jpg";
+            xhr.open("GET", url, true); // true -> peticion asincrona, false -> peticion sincrona
+
+            // Tipo de respuesta:
+            // formatos: text, document, blob, arraybuffer
+            xhr.responseType = 'blob';
+
+            // Enviar la peticion
+            // con el metodo get no se pone nada, si fuese metodo post, pondriamos lo viaja en el body
+            xhr.send(); 
+            
+            // Informo que cuando llegue la respuesta, llamamos a la funcion procesar
+            // xhr.onload = function(event){}
+            xhr.onload = procesar; // sin parentesis
+
+            function procesar(event){
+                // Solo proceso si la respuesta ha llegado de forma correcta
+                if(this.status == 200){
+                    // Crear la etiqueta <img> en la pagina
+                    var img = document.createElement('img');
+                    img.src = window.URL.createObjectURL(this.response);
+                    document.body.appendChild(img);
+                }
+            }
+        </script>
+    </body>
+</html>

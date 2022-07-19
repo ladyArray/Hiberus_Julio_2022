@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejemplo Drag&Drop</title>
+        <style>
+            .contenedor{
+                width: 300px;
+                height: 200px;
+                float: right;
+                margin: 50px;
+                background-color: blanchedalmond;
+            }
+
+            #inicio{
+                width: 200px;
+                height: 150px;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="inicio">
+            <div id="madrid" draggable="true">Madrid</div>
+            <div id="lisboa" draggable="true">Lisboa</div>
+            <div id="paris" draggable="true">Paris</div>
+        </div>
+        <div id="spain" class="contenedor">España</div>
+        <div id="francia" class="contenedor">Francia</div>
+        <div id="portugal" class="contenedor">Portugal</div>
+
+        <script>
+            // Asociar los eventos mediante js
+            madrid.ondragstart = start;  // sin parentesis
+            madrid.ondragend= end;
+            lisboa.ondragstart = start;  // sin parentesis
+            lisboa.ondragend= end;
+            paris.ondragstart = start;  // sin parentesis
+            paris.ondragend= end;
+            //arrastra.draggable = 'true';  tambien funciona asi
+
+            spain.ondragover = over;
+            francia.ondragover = over;
+            portugal.ondragover = over;
+            spain.ondragleave= leave;
+            francia.ondragleave= leave;
+            portugal.ondragleave= leave;
+
+            // addEventListener("evento", funcion)
+            spain.addEventListener("drop",drop);
+            francia.addEventListener("drop",drop);
+            portugal.addEventListener("drop",drop);
+
+            inicio.ondrop = iniciar;
+            inicio.ondragover = function(){
+                event.preventDefault()
+            } 
+
+            // Variable global que almacena el id de la capital que estoy arrastrando
+            var capital;
+
+            function iniciar(){
+                event.target.appendChild(document.getElementById(capital)); 
+                event.target.style.border = 'none';
+            }
+
+            function drop(){
+                var pais = event.target.id;
+
+                if ((pais == "spain" && capital == "madrid") ||
+                    (pais == "francia" && capital == "paris") ||
+                    (pais == "portugal" && capital == "lisboa") ){
+                        event.target.appendChild(document.getElementById(capital)); 
+                }
+                event.target.style.border = 'none';                 
+            }
+
+            function over(){
+                var pais = event.target.id;
+
+                if ((pais == "spain" && capital == "madrid") ||
+                    (pais == "francia" && capital == "paris") ||
+                    (pais == "portugal" && capital == "lisboa") ){
+                        event.target.style.border = '3px solid green';
+                } else {
+                    event.target.style.border = '3px solid red';
+                }
+       
+                // Cancelo el evento para que detecte el evento drop
+                event.preventDefault();
+            }
+
+            function leave(){
+                event.target.style.border = 'none';
+            }
+
+            function start(event){
+                capital = event.target.id;
+                event.target.style.opacity = '0.3';
+            }
+
+            function end(){
+                event.target.style.opacity = '1';
+            }
+        </script>
+    </body>
+</html>
+
