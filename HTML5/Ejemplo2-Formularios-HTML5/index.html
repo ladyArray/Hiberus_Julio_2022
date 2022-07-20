@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            span{color:red;}
+            div{margin-bottom: 20px;}
+        </style>
+    </head>
+    <body>
+        <form action="">
+            <fieldset>
+                <legend>Datos personales</legend>
+
+                <div>
+                    <label for="nombreTxt">Nombre <span>*</span>:</label> 
+                    <input type="text" name="nombre" id="nombreTxt" 
+                        required="required" minlength="3" maxlength="20" /> 
+                </div>
+
+                <div>
+                    <label for="apellidoTxt">Apellido:</label>
+                    <input type="text" name="apellido" id="apellidoTxt" list="apellidosList" />
+                    <datalist id="apellidosList">
+                        <option value="Lopez">Lopez</option>
+                        <option value="Lara">Lara</option>
+                        <option value="Laiz">Laiz</option>
+                        <option value="Sanz" label="Sanz" />
+                        <option value="Sanchez">Sanchez</option>
+                        <option value="Sevilla">Sevilla</option>
+                    </datalist>
+                </div>
+
+                <div>
+                    <label for="edadTxt">Edad:</label>
+                    <input type="number" name="edad" id="edadTxt" min="0" max="100" />
+                </div>
+                
+                <div>
+                    <label for="emailTxt">Email:</label>
+                    <input type="email" name="email" id="emailTxt" />
+                </div>
+
+                <div>
+                    <label for="sitioTxt">Sitio web:</label>
+                    <input type="url" name="sitio" id="sitioTxt" />
+                </div>
+
+                <div>
+                    <label for="tfnoTxt">Telefono:</label>
+                    <input type="tel" name="telefono" id="tfnoTxt"
+                           pattern="[6-7]{1}[0-9]{8}"
+                           title="Debe tener 9 digitos y comenzar por 6 ó 7" />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Reserva:</legend>
+
+                <div>
+                    <label for="reservaDate">Fecha Reserva:</label>
+                    <input type="date" name="reserva" id="reservaDate" min="2022-07-08" />
+                </div>
+
+                <div>
+                    <label for="horaTime">Hora entrada:</label>
+                    <input type="time" name="hora" id="horaTime" min="13:30:00" />
+                </div>
+
+                <div>
+                    <label for="colorTxt">Color de silla:</label>
+                    <input type="color" name="silla" id="colorTxt" value="#ff40ff" />
+                </div>
+
+            </fieldset>
+
+
+            <input type="submit" value="Enviar" />
+            <input type="reset" value="Limpiar" />
+        </form>
+    </body>
+</html>
