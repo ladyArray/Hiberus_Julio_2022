@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejemplo mapas</title>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        
+        <style>
+            #seccion_mapa{
+                width: 500px;
+                height: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btnAcercar">Acercar zoom</button>
+        <button id="btnAlejar">Alejar zoom</button> 
+
+        <label for="tipo">Selecciona tipo de mapa:</label>
+        <select name="tipo" id="tipo">
+            <option disabled="disabled">-- Selecciona --</option>
+            <option value="ROADMAP">ROADMAP</option>
+            <option value="SATELLITE">SATELLITE</option>
+            <option value="HYBRID">HYBRID</option>
+            <option value="TERRAIN">TERRAIN</option>
+        </select>
+
+        <div id="seccion_mapa"></div>
+
+        <script src="js/codigo.js"></script>
+    </body>
+</html>
