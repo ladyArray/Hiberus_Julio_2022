@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="formulario">
+        <label for="n1">Numero1:</label>
+        <input type="text" name="numero1" id="n1" /><br />
+
+        <label for="n2">Numero2:</label>
+        <input type="text" name="numero2" id="n2" /><br />
+    </form>
+
+    <button onclick="calcularSuma()">Sumar</button>
+    <button onclick="calcularResta()">Restar</button>
+    <button onclick="calcularMultiplicacion()">Multiplicar</button>
+    <button onclick="calcularDivision()">Dividir</button>
+    <button onclick="calcularDivisionEntera()">Divion entera</button>
+    <div id="resultado"></div>
+    <script>
+        /*
+            +, - , *, /, ~~(num1/num2)
+            Solicitar 2 numeros al usuario
+            Segun el boton mostrar el resultado
+   
+            var num1 = +window.prompt("Introduce primer numero");
+            var num2 = +window.prompt("Introduce segundo numero");
+        */
+
+        var resultado = document.getElementById("resultado");
+
+        function calcularSuma() {
+            // Tenemos otra forma de solicitar datos al usuario
+            // id_formulario.name_campo.value
+            var num1 = +formulario.numero1.value;
+            var num2 = +formulario.numero2.value;
+            resultado.innerText = "Suma: " + (num1 + num2);
+        }
+
+        function calcularResta() {
+            // Tenemos otra forma de solicitar datos al usuario
+            // id_formulario.name_campo.value
+            var num1 = parseInt(formulario.numero1.value);
+            var num2 = parseInt(formulario.numero2.value);
+            resultado.innerText = "Resta: " + (num1 - num2);
+        }
+
+        function calcularMultiplicacion() {
+            // Tenemos otra forma de solicitar datos al usuario
+            // id_formulario.name_campo.value
+            var num1 = parseInt(formulario.numero1.value);
+            var num2 = parseInt(formulario.numero2.value);
+            resultado.innerText = "Multiplicacion: " + (num1 * num2);
+        }
+
+        function calcularDivision() {
+            // Tenemos otra forma de solicitar datos al usuario
+            // id_formulario.name_campo.value
+            var num1 = parseInt(formulario.numero1.value);
+            var num2 = parseInt(formulario.numero2.value);
+            resultado.innerText = "Division: " + (num1 / num2);
+        }
+
+        function calcularDivisionEntera() {
+            // Tenemos otra forma de solicitar datos al usuario
+            // id_formulario.name_campo.value
+            var num1 = parseInt(formulario.numero1.value);
+            var num2 = parseInt(formulario.numero2.value);
+            resultado.innerText = "Division Entera: " + ~~(num1 / num2);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+            **************************** Conversiones implicitas **********************
+            */
+
+            // numeros y texto
+            document.write("Hola " + 7 + "<br/>");
+            document.write("Suma: " + 7 + 5 + "<br/>");
+            document.write("Suma: " + (7 + 5) + "<br/>");
+
+            // numeros y boolean
+            document.write(true + 7 + "<br/>");  // se convierte a numerico con valor 1
+            document.write(false + 7 + "<br/>"); // se convierte a numerico con valor 0
+
+            /*
+            **************************** Conversiones explicitas **********************
+            */
+
+            // parseFloat -> convierte texto a numero real
+            document.write(parseFloat("12.34") + "<br/>");
+            document.write(parseFloat("12.ABERC34") + "<br/>");
+            document.write(parseFloat("12.3TYNV4") + "<br/>");
+            document.write(parseFloat("Pepito") + "<br/>");
+            document.write(parseFloat("FCDE", 16) + "<br/>"); // No funciona
+
+            // parseInt -> convierte texto a numero entero
+            document.write(parseInt("12.34") + "<br/>");
+            document.write(parseInt("12345") + "<br/>");
+            document.write(parseInt("12VBHYTR345") + "<br/>");
+            document.write(parseInt("FCD9B4C", 16) + "<br/>");
+            document.write(parseInt("1001001111010", 2) + "<br/>");
+            document.write(parseInt("12345", 8) + "<br/>");
+
+            // toString -> convierte cualquier valor a una cadena de texto
+            document.write(new Date().toString() + "<br/>");
+            document.write((789).toString() + "<br/>");
+            document.write((789).toString(16) + "<br/>"); // Hexadecimal
+            document.write((789).toString(8) + "<br/>"); // Octal
+            document.write((789).toString(2) + "<br/>"); // Binario
+
+            // Solicitar 2 numeros al usuario y devolver la suma
+            var numero1 = parseFloat(window.prompt("Introduce un numero"));  //string
+            var numero2 = window.prompt("Introduce otro numero");
+            document.write("Suma: " + (numero1 + parseFloat(numero2)) + "<br/>");
+           
+            /*
+                https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus
+                otra forma de convertir a numerico con +
+                var numero1 = +prompt("Introduce un numero");  //string
+                var numero2 = +prompt("Introduce otro numero");
+                document.write("Suma: " + (numero1 + numero2) + "<br/>");
+            */
+
+        </script>
+        
+    </body>
+</html>

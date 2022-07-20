@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // Crear un array con 4 nombres
+            var nombres = ["Luis", "Maria", "Pedro", "Sara"];
+
+            // Recorrer el array con for tradicional
+            for(var indice=0; indice < nombres.length; indice++){
+                console.log(nombres[indice]);
+            }
+
+            // Recorrer el array con for-in
+            var lista = document.createElement("ul");
+            document.getElementsByTagName("body")[0] .appendChild(lista);
+
+            for(var indice in nombres){
+                var elemento = document.createElement("li");
+                elemento.innerText = nombres[indice];
+                lista.appendChild(elemento);
+            }
+
+            // Recorrer el array con for-of
+            for(var nombre of nombres){
+                console.log(nombre);
+            }
+        </script>
+    </body>
+</html>

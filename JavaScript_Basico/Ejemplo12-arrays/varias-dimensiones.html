@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // Crear un matriz de 3 filas x 2 columnas
+            var matriz1 = new Array(3); 
+            matriz1[0] = new Array(2);
+            matriz1[1] = new Array(2);
+            matriz1[2] = new Array(2); // crear un matriz de 3 filas X 2 columnas
+
+            var matriz2 = new Array(new Array("Luis", "Paula"),
+                                    new Array("Jorge", "Andres"), 
+                                    new Array("Alicia", "Pedro"));
+            var matriz3= [["Luis", "Paula"], 
+                          ["Jorge", "Andres"],
+                          ["Alicia", "Pedro"]];
+
+            // Agregar elementos al array
+            matriz1[0][0] = "Luis";
+            matriz1[0][1] = "Paula";
+            matriz1[1][0] = "Jorge";
+            matriz1[1][1] = "Andres";
+            matriz1[2][0] = "Alicia";
+            matriz1[2][1] = "Pedro";
+
+            console.log(matriz1);
+            console.table(matriz1);  // Muy muy muy chulo
+
+            // Formas de recorrer un array
+            // for tradicional
+            for(var fila=0; fila < matriz1.length; fila++){
+                for(var col=0; col < matriz1[fila].length; col++){
+                    document.write(matriz1[fila][col] + " ");
+                }
+                document.write("<br/>");
+            }
+
+            // for in
+            for (var fila in matriz1){
+                for(var col in matriz1[fila]){
+                    document.write(matriz1[fila][col] + " ");
+                }
+                document.write("<br/>");
+            }
+           
+            // for of
+            for(var fila of matriz1){
+                for(var nombre of fila){
+                    document.write(nombre + " ");
+                }
+                document.write("<br/>");
+            }
+
+            // array.forEach
+            matriz1.forEach(fila => {
+                fila.forEach(nombre => {
+                    document.write(nombre + " ");
+                });
+                document.write("<br/>");
+            });
+
+            console.log("-------- Reverse: -------- ");
+            console.table(matriz1.reverse());
+            console.log("-------- Sort: -------- ");
+            console.table(matriz1.sort());
+            console.log("-------- Join: -------- ");
+            console.log(matriz1.join(" | "));
+ 
+            console.log("Slice 1,3: " + matriz1.slice(0,1) + "<br/>");
+            
+            console.log("-------- Concat: -------- ");
+            console.table(matriz1.concat(matriz2));
+            
+
+        </script>
+    </body>
+</html>

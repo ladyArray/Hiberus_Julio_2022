@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body onload="mostrar()">
+        <script>
+            function mostrar(){
+                // navigator
+                document.write("Navegador: ", navigator.appCodeName, "<br/>");
+                document.write("Navegador: ", navigator.appName, "<br/>");
+                document.write("Version Navegador: ", navigator.appVersion, "<br/>");
+                document.write("Vendor: " + navigator.vendor + "<br/>");
+                document.write("Cookie habilitadas?: ", navigator.cookieEnabled, "<br/>");
+                document.write("Idioma: ", navigator.language, "<br/>");
+                document.write("Idiomas del navegador: ", navigator.languages, "<br/>");
+
+                // screen
+                document.write("Resolucion: ", screen.width, "x", screen.height, "<br/>");
+                document.write("Resolucion real: " + window.innerWidth + "x" 
+                + window.innerHeight + "<br/>");
+
+                // Me falta window
+                
+                // location
+                document.write("URL: ", location.pathname, "<br/>");
+                document.write("Host: ", location.host, "<br/>");
+                document.write("HostName: ", location.hostname, "<br/>");
+                document.write("Port: ", location.port, "<br/>");
+                document.write("Protocolo: ", location.protocol, "<br/>");
+                //location.reload();
+                //location.replace(http://www.marca.com);
+
+                //history
+                document.write("Longitud de historial: ", history.length, "<br/>");
+                //history.forward()
+                //history.back()
+                
+            }
+        </script>
+    </body>
+</html>

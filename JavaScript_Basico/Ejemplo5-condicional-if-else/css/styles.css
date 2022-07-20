@@ -1,0 +1,16 @@
+#cuadrado{
+    width: 50%;
+    height: 150px;
+    background-color: darkgrey;
+    margin: 50px;
+}
+
+.sombra{
+    box-shadow: 10px 20px 10px dimgray;
+}
+
+#restaurar{
+    background-color: darkgrey;
+    border: none;
+    box-shadow: none;
+}

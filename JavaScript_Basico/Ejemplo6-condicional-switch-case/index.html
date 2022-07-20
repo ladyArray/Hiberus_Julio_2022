@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <!-- button#btn$  -->
+        <button id="btn1" onclick="cambiarColor()">Rojo</button>
+        <button id="btn2" onclick="cambiarColor()">Verde</button>
+        <button id="btn3" onclick="cambiarColor()">Azul</button>
+
+        <script src="js/codigo.js"></script>
+
+        <script>
+            //var sexo = window.prompt("Introduce sexo (hombre/mujer): ");
+            var sexo = "hombre";
+
+            switch (sexo){
+                case "hombre":
+                case "h":
+                case "H":
+                    console.log("Eres hombre");
+                    break;
+                case "mujer":
+                case "m":
+                case "M":
+                    console.log("Eres mujer");
+                    break;
+                default:
+                    console.log("Valor desconocido");
+            }
+        </script>
+    </body>
+</html>

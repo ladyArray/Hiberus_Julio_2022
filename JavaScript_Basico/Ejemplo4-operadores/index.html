@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*********  Incrementos y decrementos   **********/
+            var i = 6;
+            i++;  // incremento
+            console.log(i);
+
+            i--;  // decremento
+            console.log(i);
+
+            i=6;
+            var j = i++;  // post-incremento  1º asigno, 2º incrementar   j=6  i=7
+            console.log("j=" + j + ", i=" + i);
+            i=6;
+            var j = ++i;  // pre-incremento   1º incrementa, 2º asigna    j=7  i=7
+            console.log("j=" + j + ", i=" + i);
+
+            /*********** Operadores aritmeticos **************/
+            var num1 = 7;
+            var num2 = 2;
+            console.log("Resto: " + num1 % num2);
+
+            /*********** Operadores relacionales **************/
+            console.log("Igualdad: " + (num1 == 7));
+            console.log("Desigualdad: " + (num1 != 7));
+            console.log("Mayor: " + (num1 > 7));
+            console.log("Mayor o igual: " + (num1 >= 7));
+            console.log("Menor: " + (num1 < 7));
+            console.log("Menor o igual: " + (num1 <= 7));
+
+            // Igualdad o desigualdad estricta
+            console.log("Igualdad: " + (num1 == '7'));
+            console.log("Igualdad estricta: " + (num1 === '7'));  // compara el tipo de dato
+            console.log("Desigualdad: " + (num1 != '7'));
+            console.log("Desigualdad estricta: " + (num1 !== '7'));
+
+            /*********** Operadores logicos **************/
+            var nombre1 = "Juan";
+            var nombre2 = "Pedro";
+            console.log("AND: " + (nombre1=='Juan' && nombre2=='Pedro'));
+            console.log("AND: " + (nombre1=='juan' && nombre2=='Pedro'));
+            console.log("OR: " + (nombre1=='juan' || nombre2=='Pedro'));
+            console.log("NOT: " + !(nombre1=='juan'));
+            console.log("NOT: " + !(nombre2=='Pedro'));
+
+            /*********** Operadores bit a bit **************/
+            console.log("&: " + (7&2) );
+            console.log("~: " + ~7 );
+            console.log("~: " + ~2 );
+
+            /*********** Operadores asignacion **************/
+            var numero = 4;
+            numero++;
+            numero = numero + 1;
+            numero += 1;
+
+            numero += 2;
+            numero += 5;
+
+            numero -= 6;  // numero = numero - 6
+            numero *= 2;  // numero = numero * 2
+
+        </script>
+    </body>
+</html>

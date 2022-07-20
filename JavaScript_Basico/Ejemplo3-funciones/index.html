@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!--Al pulsar el boton, detecte el evento y llame a la funcion correspondiente -->
+        <button onclick="saludar()">Mostrar saludo</button>
+        <button onclick="despedir('Pepito')">Mostrar despedida</button>
+        
+        <script>
+            // Solicitar el nombre al usuario
+            // Variable global
+            var nombre = window.prompt("Introduce tu nombre");
+
+            // El codigo de las funciones, no se ejecuta hasta que no
+            // se llama a la funcion
+            function saludar(){  // obligatorio los parentesis
+                alert("Hola, " + nombre);
+            }
+
+            function despedir(nombre){
+                // Variable local
+                var apellido = window.prompt("Introduce tu apellido");
+                alert("Adios, " + nombre + " " + apellido);
+            }
+        </script>
+    </body>
+</html>

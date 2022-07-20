@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body onload="cargarProvincias()">
+        <label for="provincias">Provincias:</label>
+        <select name="provincia" id="provincias" onchange="cargarPoblaciones()">
+            <option disabled="disabled" selected="selected">--selecciona--</option>
+        </select> <br/>
+
+        <label for="poblaciones">Poblaciones:</label>
+        <select name="poblacion" id="poblaciones">
+            <option disabled="disabled" selected="selected">--selecciona--</option>
+        </select> <br/>
+
+        <script>
+            function cargarProvincias(){
+                var nombresProvincias = ["Zaragoza", "Huesca","Madrid"];
+
+                for(var indice in nombresProvincias){
+                    var opcion = new Option(nombresProvincias[indice],indice);
+                    document.getElementById("provincias").appendChild(opcion);
+                }
+            }
+
+            function cargarPoblaciones(){
+                var nombresPoblaciones;
+
+                switch(document.getElementById("provincias").value){
+                    case "0":
+                        nombresPoblaciones = ["Zaragoza", "Tauste", "Ejea de los Caballeros"];
+                        break;
+                    case "1":
+                        nombresPoblaciones = ["Barbastro", "Jaca", "Sabiñanigo"];
+                        break;
+                    case "2":
+                        nombresPoblaciones = ["Las Rozas", "Torrejon", "Alcobendas"];
+                        break;              
+                }
+
+                // limpiar el select para eliminar las poblaciones anteriores
+                document.getElementById("poblaciones").innerHTML = "";
+                var opcion = new Option("--selecciona--");
+                opcion.disabled = true;
+                opcion.selected = true;
+                document.getElementById("poblaciones").appendChild(opcion);
+
+                for(var indice in nombresPoblaciones){
+                    var opcion = new Option(nombresPoblaciones[indice],indice);
+                    document.getElementById("poblaciones").appendChild(opcion);
+                }
+            }
+        </script>
+    </body>
+
+</html>

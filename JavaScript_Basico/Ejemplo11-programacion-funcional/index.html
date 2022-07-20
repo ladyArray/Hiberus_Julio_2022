@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var frutas = ["Pera", "Manzana", "Platano", "Naranja", "Melon"];
+
+            // formas de recorrer un array
+            for(var indice=0; indice < frutas.length; indice++){
+                console.log(frutas[indice]);
+            }
+
+            for(var indice in frutas){
+                console.log(frutas[indice]);
+            }
+
+            for(var fruta of frutas){
+                console.log(fruta)
+            }
+
+            // coleccion.forEach(que_recibo => {como lo proceso});
+            frutas.forEach(item => {
+                console.log(item);
+            });
+
+
+            // coleccion.map(que_recibo => que_devuelvo_tranformado)
+            var frutasMayusculas = frutas.map(item => item.toUpperCase());
+            console.log(frutasMayusculas);
+            console.log(frutas.map(item => item.toUpperCase()));
+
+            // Principio de inmutabilidad
+            console.log(frutas);
+
+            // coleccion.filter(que_recibo => condicion_de_filtro)
+            console.log(frutas.filter(item => item.length > 5));
+            console.log(frutas.filter(item => item.charAt(0) == "P"));
+            console.log(frutas.filter(item => item.charAt(item.length-1) == 'a'));
+
+            //"Hola 'Pepito' que tal?"
+            //'Hola "Pepito" que tal?'
+
+            // coleccion.reduce((acumulador, que_recibo) => operacion)
+            console.log([2,8,5,3,7].reduce((suma, num) => suma + num));
+            console.log(frutas.reduce((cadena, item) => cadena + "-" + item));
+
+            // Ejercicio
+            // 1.- poner las frutas en mayuscula
+            // 2.- filtrar por las que terminan en a
+            // 3.- devolver una cadena
+            var resultado = frutas
+                .map(item => item.toUpperCase())
+                .filter(item => item.charAt(item.length-1) == 'A')
+                .reduce((cadena, item) => cadena + "-" + item);
+            console.log(resultado);
+
+
+            // Dado un array de caracteres de numeros, devolver la suma de los numeros pares
+            var suma =  ["8","3","1","6"]
+                .map(item => parseInt(item))
+                .filter(item => item % 2 == 0)
+                .reduce((resultado, item) => resultado + item);
+            console.log(suma);
+
+            // Con un array de nombres, devolver una cadena con los nombres en mayusculas
+            console.log(['Maria', 'Pedro', 'Juan', 'Tomas', 'Laura']
+                .map(nombre => nombre.toUpperCase())
+                .reduce((resultado, nombre) => resultado + " | " + nombre));
+
+            console.log(['Maria', 'Pedro', 'Juan', 'Tomas', 'Laura']
+                .reduce((resultado, nombre) => resultado.toUpperCase() + " | " + nombre.toUpperCase()));
+        </script>
+    </body>
+</html>
