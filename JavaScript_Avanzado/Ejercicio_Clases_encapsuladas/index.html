@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="js/direccion.js"></script>
+        <script src="js/cliente.js"></script>
+        <script src="js/producto.js"></script>
+        <script src="js/factura.js"></script>
+    </head>
+    <body>
+        <script>
+            var cliente = new Cliente("Fruteria Lopez, S.L.", "B-12345678",
+                new Direccion("Principal", 47, "Murcia"));
+
+            var productos = [new Producto(100, "Melocotones", 0.95),
+                  new Producto(200, "Melon", 1.15), new Producto(300, "Sandia", 1.05)];
+
+            var importe = 0;
+            for(var prod of productos){
+                importe += prod.getPrecio();
+            }
+
+            var factura = new Factura(cliente, importe, new Date(), productos);
+
+            document.write("------ Detalle de la factura ------ " + "<br/>");
+            document.write("Datos Cliente: " + factura.getCliente().mostrarInfo() + "<br/>");
+            document.write("Fecha factura: " + factura.getFecha() + "<br/>");
+            document.write("Importe factura: " + factura.getImporte() + "€" + "<br/>");
+            document.write("Productos facturados:" + "<br/>");
+            for(var prod of factura.getProductos()){
+                document.write(prod.mostrarInfo() + "<br/>");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="js/fecha.js"></script>
+        <script src="js/fecha_encapsulada.js"></script>
+    </head>
+    <body>
+        <script>
+            var fecha1 = new Fecha(218,-75,202);
+            fecha1.dia = 77777777777;
+            document.write(fecha1.mostrarFecha() + "<br/>");
+
+
+            var fecha2 = new Fecha();
+            fecha2.dia = 218;
+            fecha2.mes = -75;
+            fecha2.anyo = 202;
+            document.write(fecha2.mostrarFecha() + "<br/>");
+
+            var fecha3 = new FechaEncapsulada(218,-75,202);
+            document.write(fecha3.mostrarFecha() + "<br/>");
+
+            var fecha4 = new FechaEncapsulada(21,7,2022);
+            document.write(fecha4.mostrarFecha() + "<br/>");
+
+            //fecha4.#dia = 22;
+            document.write(fecha4.mostrarFecha() + "<br/>");
+        </script>
+    </body>
+</html>
