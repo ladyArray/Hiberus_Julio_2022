@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // Map -> colecciones donde los elementos se almacenan key=value
+            // Son iterables
+            // Las claves (key) no se pueden repetir
+            // Pero los value si
+
+            // Crear el mapa
+            var mapa = new Map();
+
+            // Agregar elementos al mapa
+            mapa.set("Pera", 1.30);
+            mapa.set("Melon", 0.96);
+            mapa.set("Naranja", 0.78);
+            mapa.set("Sandia", 1.05);
+
+            // Que pasa si repito una clave? Se sobreescribe el valor
+            mapa.set("Naranja", 0.88);
+
+            console.log(mapa);
+
+            // Recuperar un elemento
+            console.log("Precio de la sandia: " + mapa.get("Sandia"));
+
+            // Tamaño
+            console.log("Cuantas frutas tengo? " + mapa.size);
+
+            // Metodos utiles
+            for(var fruta of mapa.keys()){
+                document.write(fruta + "<br/>");
+            }
+
+            for(var precio of mapa.values()){
+                document.write(precio + "<br/>");
+            }
+
+            for(var item of mapa.entries()){
+                document.write(item + "<br/>");
+            }
+
+            for(var [clave, valor] of mapa.entries()){
+                document.write("Hoy tengo " + clave + 
+                    " a precio: " + valor + "<br/>");
+            }
+
+            mapa.forEach(item => {
+                document.write(item + "<br/>");
+            });
+
+            // Borrar un elemento
+            mapa.delete("Naranja");
+            console.log(mapa);
+
+            // Borrar todos los elementos
+            mapa.clear();
+            console.log(mapa);
+
+        </script>
+        
+    </body>
+</html>

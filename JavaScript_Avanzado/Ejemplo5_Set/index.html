@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // Set -> Son colecciones dinamicas, son iterables.
+            // No admiten elementos repetidos
+
+            // Crear un set
+            var conjunto = new Set();
+
+            // Agregar valores a un set
+            conjunto.add("Pera");
+            conjunto.add("Melocoton");
+            conjunto.add("Melon");
+            conjunto.add("Sandia");
+            conjunto.add("Platano");
+
+            // Los elementos repetidos no se agregan
+            conjunto.add("Melocoton");
+
+            console.log(conjunto);
+
+            // Metodos interesantes de la clase Set
+            // Tamaño
+            console.log("Cuantos elementos hay? " + conjunto.size);
+
+            // Comprobar si ya existe un valor
+            console.log("Tengo pera? " + conjunto.has("Pera"));
+
+            // Borrar un elemento
+            conjunto.delete("Sandia");
+            console.log(conjunto);
+
+            // Formas de recorrer un set
+            for(var fruta of conjunto){
+                console.log(fruta);
+            }
+
+            conjunto.forEach(fruta => {
+                console.log(fruta);
+            });
+
+            // Borra todos los elementos de la coleccion
+            conjunto.clear();
+            console.log(conjunto);
+        </script>
+    </body>
+</html>

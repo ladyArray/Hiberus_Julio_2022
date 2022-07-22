@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="js/producto.js"></script>
+    </head>
+    <body>
+        <script>
+            var producto1 = new Producto("Melocotones", 1.15);
+            var producto2 = new Producto("Melon", 1.05);
+            var producto3 = new Producto("Sandia", 0.95);
+
+            console.log(producto1);
+            console.log(producto2);
+            console.log(producto3);
+
+            console.log("Productos creados: " + Producto.getContador());
+        </script>
+    </body>
+</html>

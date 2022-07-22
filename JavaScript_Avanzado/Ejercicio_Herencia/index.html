@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="js/persona.js"></script>
+        <script src="js/empleado.js"></script>
+        <script src="js/jefe.js"></script>
+    </head>
+    <body>
+        <script>
+            var persona = new Persona("Pepe", 58, "Hombre");
+            var empleado = new Empleado("Maria", 34, "Mujer", 25000);
+            var jefe = new Jefe("Pascual", 62, "Hombre", 42000, 10000, "9864-LVQ");
+
+            document.write(persona.mostrarDetalle() + "<br/>");
+            document.write(empleado.mostrarDetalle() + "<br/>");
+            document.write(jefe.mostrarDetalle() + "<br/>");
+        </script>
+    </body>
+</html>
