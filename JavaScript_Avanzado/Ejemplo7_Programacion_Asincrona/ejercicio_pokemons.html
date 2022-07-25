@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // *************************** POKEMONS ***********************
+
+            // Ejemplo async-await
+            var getPokemons = async(url) => {
+                try{
+                    var respuesta = await fetch(url);
+                    var datos = await respuesta.json();
+                    var array = datos.results;
+                    array.forEach((pokemon) => {
+                        document.write(pokemon.name + "<br/>")
+                    })             
+                } catch(error){
+                    console.log(error);
+                }
+            }
+
+            getPokemons("https://pokeapi.co/api/v2/pokemon")
+
+            // Ejemplo promesa
+            fetch("https://pokeapi.co/api/v2/pokemon")
+                .then((resultado) => {
+                    // transformamos la respuesta en un json
+                    var respuesta = resultado.json()
+                    return respuesta
+                })
+                .then((respuesta) => {
+                    var array = respuesta.results
+                    array.forEach((pokemon) => {
+                        document.write(pokemon.name + "<br/>")
+                    }) 
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+
+        </script>
+    </body>
+</html>

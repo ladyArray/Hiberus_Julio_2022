@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="nombres"></div>
+        <div id="imagenes"></div>
+        <script>
+            // *************************** SIMPSON ***********************
+
+            // Ejemplo async-await
+            var getPersonajes = async(url) => {
+                try{
+                    var respuesta = await fetch(url);
+                    var datos = await respuesta.json();
+                    var array = datos.results;
+                    array.forEach(personaje => {
+                        document.getElementById("nombres").innerHTML += personaje.name + "<br/>";     
+                    })
+                          
+                } catch(error){
+                    console.log(error);
+                }
+            }
+            getPersonajes("https://rickandmortyapi.com/api/character")
+
+            // Ejemplo promesa
+            fetch("https://rickandmortyapi.com/api/character")
+                .then((resultado) => {
+                    // transformamos la respuesta en un json
+                    var respuesta = resultado.json()
+                    return respuesta
+                })
+                .then((respuesta) => {
+                    //document.write(respuesta[0].quote + "<br/>") 
+                    var array = respuesta.results;
+                    array.forEach(personaje => {
+                        var img = document.createElement('img');
+                        img.src = personaje.image;
+                        document.getElementById("imagenes").appendChild(img);     
+                    })                 
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+
+        </script>
+    </body>
+</html>

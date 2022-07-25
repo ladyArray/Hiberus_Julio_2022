@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="miBoton" onclick="esperar()">Pulsame</button>
+        
+        <script>
+
+            //miBoton.onclick = esperar;
+            //miBoton.addEventListener("click", esperar);
+
+            async function esperar(){
+                // otra_funcion es un callback. Es una funcion que se invoca
+                // como parametro de otra funcion
+
+                //setTimeout(otra_funcion, tiempo)
+                setTimeout(() => {
+                    alert("Hemos esperado 2 segundos");
+                }, 2000);
+            }
+
+            // Promesas
+            // Una promesa es el resultado de una operacion asincrona
+            var url = "https://pokeapi.co/api/v2/pokemon/pikachu";
+            var promesa = fetch(url);
+            promesa.then(resultado => console.log(resultado.json())); // Todo ha ido bien
+            promesa.catch(error => console.log(error));  // Ha ocurrido un error
+
+            // Otra forma de obtener promesas
+            fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+                .then((resultado) => {
+                    console.log(resultado.json())
+                })
+                .catch((error) => {
+                    console.log(error)
+                });
+
+
+            // Lanzar la peticion de forma asincrona
+            // async - await
+            var getPokemon = async(url) => {
+                try{
+                    //var url = "https://pokeapi.co/api/v2/pokemon/pikachu";
+                    var respuesta = await fetch(url);
+                    var datos = await respuesta.json();
+                    console.log(datos);
+                } catch(error){
+                    console.log(error);
+                }
+            }
+            
+            getPokemon("https://pokeapi.co/api/v2/pokemon/pikachu");
+
+        </script>
+    </body>
+</html>

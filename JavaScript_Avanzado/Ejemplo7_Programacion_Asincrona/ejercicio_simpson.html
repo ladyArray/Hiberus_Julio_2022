@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // *************************** SIMPSON ***********************
+
+            // Ejemplo async-await
+            var getFrase = async(url) => {
+                try{
+                    var respuesta = await fetch(url);
+                    var datos = await respuesta.json();
+                    document.write(datos[0].quote + "<br/>")           
+                } catch(error){
+                    console.log(error);
+                }
+            }
+            getFrase("https://thesimpsonsquoteapi.glitch.me/quotes")
+
+            // Ejemplo promesa
+            fetch("https://thesimpsonsquoteapi.glitch.me/quotes")
+                .then((resultado) => {
+                    // transformamos la respuesta en un json
+                    var respuesta = resultado.json()
+                    return respuesta
+                })
+                .then((respuesta) => {
+                    document.write(respuesta[0].quote + "<br/>")                  
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+
+        </script>
+    </body>
+</html>
