@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // Parametro rest
+            // ...argumento -> numero variable de argumentos
+            function sumar(...numeros){
+                let suma = 0;
+                numeros.forEach((num) => {
+                    suma += num;
+                });
+                return suma;
+            }
+
+            // El parametro rest SIEMPRE al final
+            // SOLO puede haber UN parametro rest
+            function otro_sumar(num1, num2, ...numeros){
+                let suma = 0;
+                numeros.forEach((num) => {
+                    suma += num;
+                });
+                return suma;
+            }
+
+            console.log(sumar());
+            console.log(sumar(1));
+            console.log(sumar(1,2));
+            console.log(sumar(1,2,3));
+            console.log(sumar(1,2,3,4));
+        </script>
+    </body>
+</html>

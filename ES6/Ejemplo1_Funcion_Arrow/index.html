@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var datos = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            // Funcion arrow
+            datos.forEach( (elemento) => {
+                console.log(elemento);
+            });
+
+            // Funcion anonima
+            datos.forEach( function(elemento){
+                console.log(elemento);
+            });
+
+            // Funcion arrow
+            var otraFuncion = (numero) => numero + 2;
+
+            // Es equivalente a:
+            function otraFuncion(numero){
+                return numero + 2;
+            }
+
+            // Tambien se puede escribir asi:
+            var otraFuncion = function(numero){
+                return numero + 2;
+            } 
+
+            // Un callback es una funcion que se pasa como argumento
+            // de otra funcion
+            console.log("Resultado: " + otraFuncion(6));
+
+        </script>
+    </body>
+</html>

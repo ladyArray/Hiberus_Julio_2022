@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let nombres = ['Juan', 'Maria', 'Luis', 'Laura', 'Jorge'];
+            console.log(nombres);  // mostrar el array
+            console.log(...nombres);  // mostrar los elementos del array
+
+            // Solol puedo utilizar spread con elementos iterables
+            let numero = 4;
+            console.log(numero);
+            //console.log(...numero); // Uncaught TypeError: Found non-callable @@iterator
+
+            let animal = 'Perro';
+            console.log(animal);
+            console.log(...animal);  // string son arrays de caracteres
+
+            let mas_nombres = [...nombres, 'Antonio', 'Beatriz'];
+            //let mas_nombres = [nombres, 'Antonio', 'Beatriz']; // Primer elemento es un array
+            console.log(mas_nombres); 
+        </script>
+        
+    </body>
+</html>

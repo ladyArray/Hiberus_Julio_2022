@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+
+            // Definir el generador
+            function* miGenerador(){
+                let primero = 0;
+                let segundo = 1;
+                yield primero;
+                yield segundo;
+                while(true){
+                    let aux = primero + segundo;
+                    primero = segundo;
+                    segundo = aux;
+                    // yield pausa la funcion generadora
+                    yield aux;
+                }
+            }
+
+            // Crear el generador
+            var generador = miGenerador();
+
+            // Mostrar los primero 20 terminos usando el generador
+            for (let i=1; i<=20; i++){
+                console.log(generador.next().value);
+            }
+            
+
+        </script>
+    </body>
+</html>

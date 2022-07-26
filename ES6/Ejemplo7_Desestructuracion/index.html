@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="js/alumno.js"></script>
+    </head>
+    <body>
+        <script>
+            let alumnos = [new Alumno("Juan","Sanchez", 8.3),
+                           new Alumno("Maria", "Lopez", 5.3),
+                           new Alumno("Pedro", "Alvarez", 7.5)];
+
+            // Mostrar los alumnos
+            for(let alum of alumnos){
+                let {nombre, apellido, nota} = alum;   // {} para objetos
+                console.log(`${nombre} ${apellido}: ${nota}`)
+            }
+
+            let array_alumnos = [["Juan","Sanchez", 8.3],
+                           ["Maria", "Lopez", 5.3],
+                           ["Pedro", "Alvarez", 7.5]];
+
+            for(let alum of array_alumnos){
+                let [nombre, apellido, nota] = alum;     // [] para iterables
+                console.log(`${nombre} ${apellido}: ${nota}`)
+                // Crear objetos
+                let alumno = new Alumno(nombre, apellido, nota);
+                console.log(alumno.mostrarInformacion())
+            }
+        </script>
+    </body>
+</html>
