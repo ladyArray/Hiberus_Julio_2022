@@ -1,0 +1,15 @@
+table, td, th{
+    border: thick solid chocolate;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.verde{
+    color: green;
+}
+
+.rojo{
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+}

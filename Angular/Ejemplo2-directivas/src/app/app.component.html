@@ -1,0 +1,97 @@
+<h2> Directiva ngFor - Todos los alumnos </h2>
+<ul>
+  <li *ngFor="let alum of alumnos">
+    {{alum.nombre}}
+  </li>
+</ul>
+
+<h2> Directiva ngFor - Todos los alumnos con indice </h2>
+<ul>
+  <li *ngFor="let alum of alumnos; index as i">
+    Elemento {{i+1}}.- {{alum.nombre}}
+  </li>
+</ul>
+
+<h2>Ejercicio.- Mostrar los alumnos (nombre,apellido,nota) en tabla </h2>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Nota</th>
+  </tr>
+  <tr *ngFor="let alum of alumnos">
+    <td>{{alum.nombre}}</td>
+    <td>{{alum.apellido}}</td>
+    <td>{{alum.nota}}</td>
+  </tr>
+</table>
+
+<h2>Directiva ngIf - Mostrar solo alumnos aprobados</h2>
+<ul>
+  <!-- No se pueden tener 2 directivas estructurales en la misma etiqueta -->
+  <ng-container *ngFor="let alum of alumnos">
+    <li  *ngIf="alum.nota >= 5"> 
+      {{alum.nombre}}
+    </li>
+  </ng-container>
+</ul>
+
+<h2>Ejercicio - Mostrar solo los suspensos </h2>
+<ul>
+  <ng-container *ngFor="let alum of alumnos">
+    <li  *ngIf="alum.nota < 5"> 
+      {{alum.nombre}}
+    </li>
+  </ng-container>
+</ul>
+
+<h2>Ejercicio - Mostrar los repetidores</h2>
+<ul>
+  <ng-container *ngFor="let alum of alumnos">
+    <li  *ngIf="alum.repetidor"> 
+      {{alum.nombre}}
+    </li>
+  </ng-container>
+</ul>
+
+<h2>Ejercicio - Mostrar los NO repetidores</h2>
+<ul>
+  <ng-container *ngFor="let alum of alumnos">
+    <li  *ngIf="!alum.repetidor"> 
+      {{alum.nombre}}
+    </li>
+  </ng-container>
+</ul>
+
+<h2>Ejercicio - Mostrar los suspensos que sean repetidores (&&)</h2>
+<ul>
+  <ng-container *ngFor="let alum of alumnos">
+    <li  *ngIf="alum.repetidor && alum.nota < 5"> 
+      {{alum.nombre}}
+    </li>
+  </ng-container>
+</ul>
+
+<h2>Directiva ngStyle - Verde los aprobados y rojo los suspensos</h2>
+<ul>
+  <li *ngFor="let alum of alumnos" 
+      [ngStyle]="{color: alum.nota >= 5 ? 'green'  : 'red'}">
+    {{alum.nombre}} {{alum.apellido}}: {{alum.nota}}
+  </li>
+</ul>
+
+<h2>Directiva ngClass - Verde los aprobados y rojo los suspensos</h2>
+<ul>
+  <li *ngFor="let alum of alumnos" 
+      [ngClass]="{verde: alum.nota >= 5, rojo: alum.nota < 5}">
+    {{alum.nombre}} {{alum.apellido}}: {{alum.nota}}
+  </li>
+</ul>
+
+<h2>Directiva ngClass - Verde los aprobados y rojo los suspensos</h2>
+<ul>
+  <li *ngFor="let alum of alumnos" 
+      [ngClass]="alum.nota >= 5 ? 'verde'  : 'rojo'">
+    {{alum.nombre}} {{alum.apellido}}: {{alum.nota}}
+  </li>
+</ul>
