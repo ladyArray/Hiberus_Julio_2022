@@ -13,3 +13,13 @@ table, td, th{
     font-weight: bold;
     text-decoration: underline;
 }
+
+div{
+    width: fit-content;
+}
+
+.resaltar{
+    color: blue;
+    font-size: x-large;
+    background-color: silver;
+}

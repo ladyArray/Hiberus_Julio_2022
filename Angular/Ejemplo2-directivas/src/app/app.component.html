@@ -95,3 +95,40 @@
     {{alum.nombre}} {{alum.apellido}}: {{alum.nota}}
   </li>
 </ul>
+
+<h2>Directiva ngSwitch y ngSwitchCase - Resaltar por valoracion</h2>
+<ul>
+  <li *ngFor="let alum of alumnos" [ngSwitch]="alum.valoracion" >
+    <div *ngSwitchCase=" 'alta' " [ngStyle]="{backgroundColor: 'green' }">
+      {{alum.nombre}} {{alum.apellido}} {{alum.nota}}
+    </div>
+    <div *ngSwitchCase=" 'media' " [ngStyle]="{backgroundColor: 'orange' }">
+      {{alum.nombre}} {{alum.apellido}} {{alum.nota}}
+    </div>
+    <div *ngSwitchCase=" 'baja' " [ngStyle]="{backgroundColor: 'red' }">
+      {{alum.nombre + " " +  alum.apellido + " " + alum.nota}}
+    </div>
+    <div *ngSwitchDefault>
+      {{alum.nombre + " " +  alum.apellido + " " + alum.nota}}
+    </div>
+  </li>
+</ul>
+
+<h2>Directiva personalizada - Mostrar aprobados y suspensos</h2>
+<ul>
+  <li *ngFor="let alum of alumnos" [appNota]="alum"></li>
+</ul>
+
+<h2>Directiva personalizada - Resaltar alumnos con valoracion 'alta'</h2>
+<ul>
+  <li *ngFor="let alum of alumnos" [appPintar]="alum.valoracion">
+    {{alum.nombre}} {{alum.apellido}} {{alum.nota}}
+  </li>
+</ul>
+
+<h2>Directiva personalizada - Resaltar alumnos segun click</h2>
+<ul>
+  <li *ngFor="let alum of alumnos">
+    <a appContarClicks> {{alum.nombre}} </a>
+  </li>
+</ul>
