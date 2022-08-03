@@ -1,0 +1,6 @@
+<h1>Museos de Madrid</h1>
+<ul>
+    <li *ngFor="let museo of museos">
+        <a routerLink="/museo_detalle/{{museo.id}}">{{museo.nombre}}</a>
+    </li>
+</ul>
