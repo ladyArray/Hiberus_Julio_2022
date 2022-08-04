@@ -1,0 +1,24 @@
+<h1>Todos los pokemons</h1>
+<ul>
+  <li *ngFor="let pokemon of pokemons">{{pokemon.name}}</li>
+</ul>
+
+<h2>Busca tu pokemon</h2>
+Nombre: <input type="text" [(ngModel)]="nombre" />
+<button (click)="buscarPokemon()" >Buscar</button>
+
+<div *ngIf="pokemon != null">
+  <h2>Datos de tu pokemon: {{pokemon.name}}</h2>
+  <ul>
+    <li>Nombre: {{pokemon.name}}</li>
+    <li>Peso: {{pokemon.weight}}</li>
+    <li>Altura: {{pokemon.height}}</li>
+    <li>Habilidades:</li>
+      <ol>
+        <li *ngFor="let habilidad of pokemon.abilities">
+          {{habilidad.ability.name}} {{habilidad.ability.url}} 
+        </li>
+      </ol>
+  </ul>
+
+</div>

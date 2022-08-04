@@ -1,0 +1,55 @@
+<h1>Ejemplo de Pipes</h1>
+
+<h2>Pipes de texto</h2>
+Sin formato: {{texto}} <br/>
+Minusculas: {{texto | lowercase}} <br/>
+Mayusculas: {{texto | uppercase}} <br/>
+Titulo: {{texto | titlecase}} <br/>
+
+<h2>Pipes de json</h2>
+Sin formato: {{persona}} <br/>
+Con formato JSON: {{persona | json}} <br/>
+
+<h2>Pipes de numero</h2>
+Sin formato: {{numero}} <br/>
+Numero: {{numero | number}} <br/>
+Numero con 3 ó 5 decimales: {{numero | number: '.3-5'}} <br/>
+Numero con 2 decimales: {{numero | number: '.2-2'}} <br/>
+Numero con 8 digitos 2 decimales: {{numero | number: '8.2-2'}} <br/>
+Numero con 4 digitos 2 decimales: {{numero | number: '4.2-2'}} <br/>
+Numero con 2 decimales: {{numero | number: '.2-2': 'en'}} <br/>
+
+<h2>Pipes de porcentaje</h2>
+Sin formato: {{porcentaje}} <br/>
+Porcentaje: {{porcentaje | percent}} <br/>
+Porcentaje con 2 decimales: {{porcentaje | percent: '.2-2'}} <br/>
+Porcentaje con 2 decimales en ingles: {{porcentaje | percent: '.2-2': 'en'}} <br/>
+
+<h2>Pipes de moneda</h2>
+Sin formato: {{numero}} <br/>
+Importe: {{numero | currency}} <br/>
+Importe en euros: {{numero | currency: 'EUR'}} <br/>
+Importe en euros con codigo: {{numero | currency: 'EUR': 'code'}} <br/>
+Importe en euros con simbolo: {{numero | currency: 'EUR': 'symbol'}} <br/>
+Importe en euros con simbolo y  2 decimales: 
+  {{numero | currency: 'EUR': 'symbol': '.2-2'}} <br/>
+Importe en euros con simbolo y  2 decimales en ingles: 
+  {{numero | currency: 'EUR': 'symbol': '.2-2': 'en'}} <br/>
+Importe en euros con simbolo y  2 decimales en ingles: 
+  {{numero | currency: '': '': '.2-2': 'en'}} <br/>
+
+<h2>Pipes de fecha</h2>
+Sin formato: {{fecha}} <br/>
+Con formato: {{fecha | date}} <br/>
+Con formato medium: {{fecha | date: 'medium'}} <br/>
+Con formato short: {{fecha | date: 'short'}} <br/>
+Con formato full: {{fecha | date: 'full'}} <br/>
+Con formato long: {{fecha | date: 'long'}} <br/>
+Fecha: {{fecha | date: 'shortDate'}} <br/>
+Hora: {{fecha | date: 'shortTime'}} <br/>
+Con formato personalizado: {{fecha | date: 'dd/MM/yyyy'}} <br/>
+Con formato personalizado: {{fecha | date: 'dd MMM yyyy'}} <br/>
+Hora en canarias: {{fecha | date: 'shortTime': '+1'}} <br/>
+Fecha en ingles: {{fecha | date: 'shortDate': '': 'en'}} <br/>
+
+<br/><br/><br/><br/><br/>
