@@ -1,0 +1,27 @@
+<h1>Todos mis amigos</h1>
+<ul>
+  <li *ngFor="let contacto of contactos">
+    {{contacto.nombre}} {{contacto.telefono}}
+  </li>
+</ul>
+
+
+<h2>Buscar un amigo</h2>
+<label>ID:</label>
+<input type="text" [(ngModel)]="id"  />
+<button (click)="buscar()">Buscar</button>
+
+<div *ngIf = 'amigo != null'>
+    Nombre: {{amigo.nombre}} <br/>
+    Telefono: {{amigo.telefono}}<br/>
+
+    <button (click)="borrar()"  >Eliminar</button>
+</div>
+
+<h2>Alta un amigo</h2>
+<label>Nombre:</label>
+<input type="text" [(ngModel)]="nombre"  /> <br/>
+<label>Telefono:</label>
+<input type="text" [(ngModel)]="telefono"  /> <br/>
+
+<button (click)="alta()">Agregar contacto</button>
