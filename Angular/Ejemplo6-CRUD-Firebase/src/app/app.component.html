@@ -19,9 +19,24 @@
 </div>
 
 <h2>Alta un amigo</h2>
-<label>Nombre:</label>
-<input type="text" [(ngModel)]="nombre"  /> <br/>
-<label>Telefono:</label>
-<input type="text" [(ngModel)]="telefono"  /> <br/>
+<form [formGroup]="amigoForm">
+  <label>Nombre:</label>
+  <input type="text" formControlName="nombre"  />
+  <!--Para que no de error en los posibles valores nulos.
+      En el fichero tsconfig.json agregar "strictNullChecks":false en la "angularCompilerOptions" -->
+  <div *ngIf="nombre.errors?.['minlength']" [ngStyle]="{color:'red'}">
+    * Longitud minima 3 caracteres
+  </div> <br/>
 
-<button (click)="alta()">Agregar contacto</button>
+  <label>Telefono:</label>
+  <input type="text" formControlName="telefono"  />
+  <div *ngIf="telefono.errors?.['required']" [ngStyle]="{color:'red'}">
+    * Compo requerido
+  </div>
+
+  <div *ngIf="telefono.errors?.['pattern']" [ngStyle]="{color:'red'}">
+    * Debe tener 9 digitos y comenzar por 6 ó 7
+  </div>
+
+  <button [disabled]="!amigoForm.valid" (click)="alta()">Agregar contacto</button>
+</form>

@@ -1,0 +1,31 @@
+<div *ngIf="logado" [ngStyle]="{backgroundColor: 'silver'}">
+  Usuario: {{email}}
+  <button (click)="logOut()">Logout</button>
+</div>
+<hr/>
+
+<div *ngIf="registro">
+  Ya estoy registrado
+  <button (click)="registro=false">Login</button>
+</div>
+
+<div *ngIf="!registro">
+  Soy nuevo y no estoy registrado
+  <button (click)="registro=true">Registrarme</button>
+</div>
+
+<div [ngStyle]="{backgroundColor: 'pink'}">
+  <label for="email">Email:</label>
+  <input type="email" [(ngModel)]="email" id="email"  /> <br/>
+
+  <label for="password">Password:</label>
+  <input type="password" [(ngModel)]="password" id="password"  /> <br/>
+
+  <div *ngIf="registro">
+    <label for="confpassword">Confirmar Password:</label>
+    <input type="password" [(ngModel)]="confirmPassword" id="confpassword"  /> <br/>
+  </div>
+
+  <button *ngIf="!registro"  (click)="login()">Login</button>
+  <button *ngIf="registro" (click)="registrar()">Registrarme</button>
+</div>
