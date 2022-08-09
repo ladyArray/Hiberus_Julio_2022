@@ -1,0 +1,75 @@
+<mat-tab-group>
+  <mat-tab label="Grid">
+    <mat-grid-list cols="3">
+      <mat-grid-tile *ngFor="let item of nombres" 
+          [style.background]="item.color" >
+        {{item.nombre}}
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-tab>
+
+  <mat-tab label="Textos">
+    <p class="mat-h1">Ejemplo h1</p>
+    <p class="mat-h2">Ejemplo h2</p>
+    <p class="mat-display-3">Ejemplo display 3</p>
+    <p class="mat-display-2">Ejemplo display 2</p>
+    <p class="mat-display-1">Ejemplo display 1</p>
+    <p class="mat-caption">Ejemplo caption</p>
+    <p class="mat-body">Ejemplo body</p>
+    <p class="mat-body-strong">Ejemplo body-strong</p>
+  </mat-tab>
+
+  <mat-tab label="Menus">
+    <button mat-icon-button [matMenuTriggerFor]="pepito">
+      <mat-icon>reorder</mat-icon>
+    </button>
+
+    <mat-menu #pepito="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="otro">Setting</button>
+      <button mat-menu-item>Help</button>
+    </mat-menu>
+
+    <mat-menu #otro="matMenu">
+      <button mat-menu-item>Font</button>
+      <button mat-menu-item>Security</button>
+    </mat-menu>
+  </mat-tab>
+
+  <mat-tab label="Botones">
+    <div>
+      <button mat-button color="primary">Boton</button>
+      <button mat-button color="accent">Boton</button>
+      <button mat-button color="warn">Boton</button>
+    </div>
+
+    <div>
+      <button mat-raised-button color="primary">Boton</button>
+      <button mat-raised-button color="accent">Boton</button>
+      <button mat-raised-button color="warn">Boton</button>
+    </div>
+
+    <div>
+      <button mat-stroked-button color="primary">Boton</button>
+      <button mat-stroked-button color="accent">Boton</button>
+      <button mat-stroked-button color="warn">Boton</button>
+    </div>
+
+    <div>
+      <button mat-fab color="primary">Boton</button>
+      <button mat-fab color="accent">Boton</button>
+      <button mat-fab color="warn">Boton</button>
+    </div>
+
+    <div>
+      <button mat-mini-fab color="primary">Boton</button>
+      <button mat-mini-fab color="accent">Boton</button>
+      <button mat-mini-fab color="warn">Boton</button>
+    </div>
+
+    <div>
+      <button mat-icon-button color="primary"><mat-icon>shop</mat-icon></button>
+      <button mat-icon-button color="accent"><mat-icon>alarm</mat-icon></button>
+      <button mat-icon-button color="warn"><mat-icon>home</mat-icon></button>
+    </div>
+  </mat-tab>
+</mat-tab-group>
