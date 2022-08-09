@@ -12,6 +12,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './components/error/error.component';
 import { MuseoDetalleComponent } from './components/museo-detalle/museo-detalle.component';
 import { MuseosService } from './services/museos.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const misRutas: Routes = [
   {path: 'home', component: HomeComponent},
@@ -37,9 +47,26 @@ const misRutas: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(misRutas)
+    RouterModule.forRoot(misRutas),
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => {
+          return new TranslateHttpLoader(http);
+        },
+        deps: [HttpClient]
+      }
+    }),
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [MuseosService],
+  providers: [MuseosService, MatPaginatorIntl],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

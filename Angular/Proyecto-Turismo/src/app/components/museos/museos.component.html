@@ -1,6 +1,52 @@
+<mat-form-field>
+    <input matInput placeholder="Buscar..." 
+            [(ngModel)]="dato" (keyup)="filtrar()" />
+</mat-form-field>
+
+<mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</mat-header-cell>
+        <mat-cell *matCellDef="let item">
+            <a routerLink="/museo_detalle/{{item.id}}">{{item.nombre}}</a>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="telefono">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Telefono</mat-header-cell>
+        <mat-cell *matCellDef="let item">{{item.telefono}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="precio">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Precio</mat-header-cell>
+        <mat-cell *matCellDef="let item">{{item.precio}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="abierto">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Abierto</mat-header-cell>
+        <mat-cell *matCellDef="let item">{{item.abierto}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="nombreColumnas"></mat-header-row>
+    <mat-row *matRowDef="let item; columns: nombreColumnas;"></mat-row>
+
+    
+</mat-table>
+
+<mat-paginator [pageSize]="6" [pageSizeOptions]="[3,6,9,12]"
+    showFirstLastButtons></mat-paginator>
+
+
+
+
+
+
+
+
+<!--
 <h1>Museos de Madrid</h1>
 <ul>
     <li *ngFor="let museo of museos">
         <a routerLink="/museo_detalle/{{museo.id}}">{{museo.nombre}}</a>
     </li>
 </ul>
+-->
