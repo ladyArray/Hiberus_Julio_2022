@@ -15,6 +15,7 @@ class App extends React.Component {
   }
 
   handleSubmit = e => {
+    // Cancelar el submit
     e.preventDefault();
 
     // Con el valor recibido lo agregamos al estado
