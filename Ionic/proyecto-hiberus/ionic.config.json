@@ -1,0 +1,7 @@
+{
+  "name": "proyecto-hiberus",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
