@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Nuestro equipo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Nuestro equipo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <div class="container text-center">
+      <div class="row" [ngStyle]="{'margin-top': '5px'}">
+          <div class="col" *ngFor="let user of usuarios; index as i">
+              <div class="card" [ngStyle]="{'width': '8rem'}">
+                  <img src="https://i.pravatar.cc/150?img={{i}}" class="card-img-top" alt="user.username">
+                  <div class="card-body">
+                      <h6 class="card-title">{{user.name}}, {{user.username}}</h6>
+                      <p class="card-text">{{user.email}} </p>
+                  </div>
+              </div>
+          </div>       
+      </div>
+    </div>
+  </div>
+</ion-content>

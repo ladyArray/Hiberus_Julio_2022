@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { CervezasService } from './services/cervezas.service';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,7 +15,7 @@ registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [  
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
     { provide: LOCALE_ID, useValue: 'es' },
