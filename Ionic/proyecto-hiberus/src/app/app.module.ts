@@ -15,7 +15,7 @@ registerLocaleData(localeEs);
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [
+  providers: [  
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
     { provide: LOCALE_ID, useValue: 'es' },
     CervezasService],

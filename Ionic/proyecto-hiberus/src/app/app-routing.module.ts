@@ -7,10 +7,19 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'folder/:id',
+    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'folder/Inbox',
     pathMatch: 'full'
   },
+  // {
+  //   path: '',
+  //   redirectTo: 'home',
+  //   pathMatch: 'full'
+  // },
   {
     path: 'catalogo',
     loadChildren: () => import('./catalogo/catalogo.module').then( m => m.CatalogoPageModule)
