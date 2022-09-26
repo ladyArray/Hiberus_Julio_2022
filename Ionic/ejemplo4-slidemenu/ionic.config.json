@@ -1,0 +1,7 @@
+{
+  "name": "ejemplo4-slidemenu",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
