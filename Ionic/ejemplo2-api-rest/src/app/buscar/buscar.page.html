@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>buscar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-label>Nombre:</ion-label>
+  <ion-input [(ngModel)]="nombre" ></ion-input><br/>
+  <ion-button (click)="buscarPokemon()">BUSCAR</ion-button> <br/>
+
+  <div *ngIf="pokemon != null" [ngStyle]="{backgroundColor: 'silver'}">
+    <h2>Datos del pokemon</h2>
+    <p>Nombre: {{pokemon.name}}</p>
+    <p>Orden: {{pokemon.order}}</p>
+    <p>Peso: {{pokemon.weight}}</p>
+    <p>Altura: {{pokemon.height}}</p>
+  </div>
+</ion-content>

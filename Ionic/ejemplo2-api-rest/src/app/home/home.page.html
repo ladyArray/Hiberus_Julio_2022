@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Pokemons</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div>
+    <ion-button routerLink="/buscar" style="float: right;">Buscar</ion-button>
+    <ion-list>
+      <ion-item *ngFor="let pokemon of pokemons">
+          {{pokemon.name}}
+      </ion-item>
+    </ion-list>
+
+    <ion-button (click)="solicitar(this.rutaAnterior)"> << </ion-button>
+    <ion-button (click)="solicitar(this.rutaSiguiente)"> >> </ion-button>
+  </div>
+</ion-content>
