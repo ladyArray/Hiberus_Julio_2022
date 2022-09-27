@@ -33,4 +33,8 @@ export class AlumnosService {
   public add(nuevo: any): any{
     return this.angularFirestore.collection('alumnos').add(nuevo);
   }
+
+  public modificarAlumno(id:string, data:any){
+    return this.angularFirestore.collection('alumnos').doc(id).update(data);
+  }
 }

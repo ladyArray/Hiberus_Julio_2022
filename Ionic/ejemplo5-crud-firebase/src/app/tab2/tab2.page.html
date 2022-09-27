@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Nuevo alumno
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,39 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Alumno nuevo</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div id="container">
+    <form [formGroup]="alumnoForm">
+      <ion-label>Nombre:</ion-label>
+      <ion-input type="text" formControlName="nombre" 
+          (ionFocus)="mostrar()" (ionBlur)="mostrarErrorNombre=false"></ion-input> 
+      <div *ngIf="mostrarErrorNombre">
+        <div *ngIf="nombre.errors?.['required']" [ngStyle]="{color:'red'}" >
+          Nombre obligatorio
+        </div>
+        <div *ngIf="nombre.errors?.['minlength']" [ngStyle]="{color:'red'}" >
+          Minimo 3 caracteres
+        </div>
+      </div>
+      <br/>
+
+      <ion-label>Nota:</ion-label>
+      <ion-input type="number" formControlName="nota"></ion-input> 
+      <div *ngIf="nota.errors?.['required']" [ngStyle]="{color:'red'}" >
+        Nota obligatoria
+      </div>
+      <div *ngIf="nota.errors?.['min']" [ngStyle]="{color:'red'}" >
+        Nota minima 0
+      </div>
+      <div *ngIf="nota.errors?.['max']" [ngStyle]="{color:'red'}" >
+        Nota maxima 10
+      </div>
+      <br/>
+
+      <ion-button (click)="alta()" [disabled]="!alumnoForm.valid">Guardar datos</ion-button>
+    </form>
+  </div>
 </ion-content>
