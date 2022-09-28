@@ -13,6 +13,11 @@
     </ion-toolbar>
   </ion-header>
 
+  <div *ngIf="usuario!=null" [ngStyle]="{'text-align':'right'}">
+    <ion-text>Usuario: {{usuario}}</ion-text>
+    <ion-icon (click)="salir()" size="large" name="log-out-outline"></ion-icon>
+  </div>
+
   <div id="container">
     <div *ngIf="!registro">
       <h2>Modo Login</h2>
