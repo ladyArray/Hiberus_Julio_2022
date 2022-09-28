@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <div *ngIf="!registro">
+      <h2>Modo Login</h2>
+      Soy nuevo, no estoy registrado
+      <ion-button (click)="registro=true">Registrarme</ion-button>
+    </div>
+
+    <div *ngIf="registro">
+      <h2>Modo registro</h2>
+      Ya estoy registrado
+      <ion-button (click)="registro=false">Login</ion-button>
+    </div>
+
+    <div>
+      <ion-label>Email:</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input><br/>
+      <ion-label>Password:</ion-label>
+      <ion-input type="password" [(ngModel)]="pw"></ion-input><br/>
+    </div>
+
+
+  </div>
+</ion-content>
