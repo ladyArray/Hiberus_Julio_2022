@@ -26,11 +26,19 @@
       <ion-button (click)="registro=false">Login</ion-button>
     </div>
 
-    <div>
+    <div [ngStyle]="{'backgroundColor':'silver'}">
       <ion-label>Email:</ion-label>
       <ion-input type="email" [(ngModel)]="email"></ion-input><br/>
       <ion-label>Password:</ion-label>
       <ion-input type="password" [(ngModel)]="pw"></ion-input><br/>
+
+      <div *ngIf="registro">
+        <ion-label>Confirmar Password:</ion-label>
+        <ion-input type="password" [(ngModel)]="conf_pw"></ion-input><br/>
+      </div>
+
+      <ion-button *ngIf="!registro" (click)="login()">Login</ion-button>
+      <ion-button *ngIf="registro" (click)="registrar()">Registrarme</ion-button>
     </div>
 
 
