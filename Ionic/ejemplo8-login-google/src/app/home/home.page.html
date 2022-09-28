@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <!-- <div *ngIf="usuario.length == 0"> -->
+      <h3>Para acceder tienes que logarte</h3>
+      <ion-button (click)="login()">Login</ion-button>
+    <!-- </div> -->
+    
+
+    <!-- <div *ngIf="usuario.length > 0"> -->
+      <p [ngStyle]="{'text-align':'right'}">Usuario</p>
+      <h2>Bienvenido a nuestra app</h2>
+      <ion-icon (click)="salir()" size="large" name="log-out-outline"></ion-icon>
+    <!-- </div> -->
+  </div>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "ejemplo8-login-google",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
