@@ -1,3 +1,5 @@
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { LoginService } from '../services/login.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +9,21 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  usuario: string = '';
+
+  constructor(private loginService: LoginService) {}
+
+  login(){
+    this.loginService.login().then((info) => {
+      this.usuario = info.lastName;
+    });
+  }
+
+  salir(){
+    this.loginService.logout().then(() => {
+      alert("Session cerrada");
+      this.usuario = '';
+    });
+  }
 
 }
